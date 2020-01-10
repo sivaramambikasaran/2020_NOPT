@@ -1,0 +1,39 @@
+\documentclass{article}
+\usepackage{sivaSAFRANshort}
+\chead{Assignment $1$: Warmup with some high school optimization problems}
+\begin{document}
+	\begin{enumerate}
+		\item
+		Prove that among all triangles with a fixed perimeter $P$, the equilateral triangle is the one that maximizes the area.
+		\item
+		Generalize the above for a $n$-sided polygon and prove it.
+		\item
+		Consider a triangle $ABC$ and a point $D$ on $BC$. Find points (by construction) $E$ on $AC$ and $F$ on $AB$ such that the perimeter of the triangle $ABC$ is minimum.
+		\item
+		Geometrically, prove that the area of a cyclic quadrilateral is the maximum possible for any quadrilateral with the given side lengths.
+		\item
+		\textbf{Bus terminus location problem}: Geometrically obtain the location of the bus terminus $T$ on the road segment $PQ$ such that the lengths of the roads linking $T$ with the two cities $A$ and $B$ is minimum.
+		\begin{center}
+		\begin{tikzpicture}
+			\draw (0,0) -- (1,3);
+			\draw [fill=cyan] (3,2) circle (0.1);
+			\node at (3,2.375) {$B$};
+			\draw [fill=cyan] (2,0.5) circle (0.1);
+			\node at (2,0.875) {$A$};
+			\draw [fill=red] (0.5,1.5) circle (0.1);
+			\node at (0.125,1.5) {$T$};
+		\end{tikzpicture}
+		\end{center}
+		\item
+		Given two points $A$ and $B$ in a vertical plane (with $A$ above $B$), find the curve which the object must follow so that starting from $A$, it reaches $B$ in the shortest possible time under gravity.
+		\item
+		Given three cities $A$, $B$ and $C$, geometrically find the location where an artificial water reservoir must be constructed so that the sum of the length of the pipeline from the reservoir to the three cities is minimum.
+		\item
+		Prove the arithmetic mean geometric mean inequality, i.e.,
+		$$\dfrac{a_1+a_2+\cdots+a_n}n \geq \sqrt[n]{a_1a_2\cdots a_n}$$
+		where $a_i \geq 0$.
+		\item
+		Prove that in any triangle $ABC$, we have
+		$$\sin(A) + \sin(B) + \sin(C) \leq dfrac{3\sqrt3}2$$
+	\end{enumerate}
+\end{document}
