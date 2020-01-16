@@ -1,0 +1,124 @@
+\documentclass{article}
+\usepackage{sivaSAFRANshort}
+\chead{MA$5895$: Jan-May $2020$}
+\begin{document}
+\tableofcontents
+\newpage
+	\section{Jan 14, Tuesday}
+	\begin{itemize}
+		\item
+		Administrative details:
+		\begin{itemize}
+			\item
+			\textbf{Grading}: $30+15+15+40$
+			\item
+			\textbf{Class timings}: Keep all four slots open (T,W,Th,Fr); This week we will be travelling on Thursday, Friday.
+			\item
+			\textbf{Pop quiz}: Attendance
+		\end{itemize}
+		\item
+		Optimization in nature: 
+		\begin{itemize}
+			\item
+			Principle of least action
+			\item
+			Angle of reflection equals angle of incidence since light minimizes the time taken to travel between two points.
+			\end{itemize}
+		\item
+		\textbf{Generic optimization problem}:
+		$$\boxed{\min_{x \in \Rb^n} f(x) \text{ subject to }x \in S \,\,\,\,\,\,\, (\spadesuit)}$$
+		$x$ is the unknowns/parameters/variables, $f: \Rb^n \mapsto \Rb$ is a real valued function, and $S$ is a set of values that $x$ can take. $f$ is referred to as the objective function, $S$ is referred to as the set of feasible values. Note that a maximisation problem can be reformulated into a minimisation problem, since
+		$$\max f(x) = -\min \bkt{-f(x)}$$
+		\item
+		Optimization is also termed as mathematical programming.
+		\item
+		Form of optimization problems:
+		\begin{itemize}
+			\item
+			\textbf{Continuous, unconstrained optimization}:
+			Minimize $x_1^2-x_1x_2 + x_2^2 + 4x_1 - 2x_2 + 7$, where $x_1,x_2 \in \Rb$.
+			\item
+			\textbf{Continuous, constrained optimization}: We want to buy $x_1$ kilos of onions (vegetable $1$), $x_2$ kilos of potato (vegetable $2$) and $x_3$ kilos of carrot (vegetable $3$), where the cost per kilo being $c_1,c_2$ and $c_3$ respectively. Each of these vegetables provide $4$ nutrients $n_1,n_2,n_3$ and $n_4$. Let $n_{ij}$ is the per kilo contribution of vegetable $j$ to nutrient $i$. We need to ensure that for a balanced diet we need at-least $N_i$ units of nutrient $n_i$. A natural optimization problem would be to minimize the cost of purchasing the vegetables subject to the nutrient constraint. This can be posed as
+			$$\text{Minimize }c_1x_1+c_2x_2+c_3x_3$$
+			subject to
+			$$\dsum_{j=1}^3 n_{ij}x_j \geq N_i \,\,\, \forall i \in \{1,2,3,4\}$$
+			$$x_j \geq 0, x_j \in \Rb, \,\,\, \forall j \in \{1,2,3\}$$
+			Note that the feasible set is determined by the constraint and is an uncountably infinite set.
+			\item
+			\textbf{Discrete, constrained optimization}: The same problem above could be converted to a discrete problem if instead of cost per kilo and nutrient per kilo, we have cost per piece of vegetable and nutrient per piece of vegetable. The optimization problem now becomes
+			$$\text{Minimize }c_1x_1+c_2x_2+c_3x_3$$
+			subject to
+			$$\dsum_{j=1}^3 n_{ij}x_j \geq N_i \,\,\, \forall i \in \{1,2,3,4\}$$
+			$$x_j \in \Nb \dcup \{0\}, \,\,\, \forall j \in \{1,2,3\}$$
+			where the only difference is $x_j$'s now belong to $\Nb \dcup \{0\}$ than $\Rb$. Note that, as opposed to the previous case, the feasible set is a countably infinite set.
+			\item
+			\textbf{Discrete/Combinatorial optimization}: It is proposed to lay roads between four cities so that the four cities are connected. The cost of laying road between the cities is indicated in Table~\ref{cities}.
+			\begin{table}[!htbp]
+				\caption{Cost of road construction in crores}
+				\begin{center}
+				\begin{tabular}{|c|c|c|c|c|}
+					\hline
+					& $1$ & $2$ & $3$ & $4$\\
+					\hline
+					$1$ & $-$ & $60$ & $10$ &  $100$\\
+					\hline
+					$2$ & $60$ & $-$ & $115$ & $70$ \\
+					\hline
+					$3$ &  $10$ &  $115$ & $-$ & $75$\\
+					\hline
+					$4$ & $100$ & $70$ & $75$ & $-$ \\
+					\hline
+				\end{tabular}
+				\label{cities}
+				\end{center}
+			\end{table}
+			The goal is to devise a construction strategy with minimum cost. Note that the feasible set in this case is a finite set, since there are only finitely many choices.
+			\newpage
+			\item
+			\textbf{Stochastic optimization}: Consider the problem of buying vegetables again. Here we want to follow a set pattern over the next one month, i.e., every day we need to purchase $x_i$ kilos of vegetable $i$. However, the cost of the vegetable $i$ varies daily and its distribution is given by $\mathcal{N}\bkt{c_i,\sigma_i^2}$. Further, the nutrient content per kilo corresponding to nutrient $i$ from vegetable $j$, also varies daily with a distribution given by $\mathcal{N}\bkt{ n_{ij}, s_{ij}^2}$. Given this devise a strategy that minimizes the cost on these vegetables over a month.
+			\item
+			In this course, we are only going to look at
+			\begin{center}
+				{\large\boxed{\color{lime}{\text{Deterministic, continuous (constrained and unconstrained) optimization problems}}}}
+			\end{center}
+			\item
+			When we formulate an optimization problem as in $(\spadesuit)$, we need to ask couple of questions:
+			\begin{itemize}
+				\item
+				Does a solution exist?
+				\item
+				Is the solution unique?
+			\end{itemize}
+			\item
+			In this course, we only look at optimization problems, where $f$ is continuous and the feasible set $S$ is compact (in our case since we are going to work in $\Rb^n$, hence the set $S$ is closed and bounded.) This guarantees that the minimum exists.
+			\item
+			Typically, the feasible set $S$ is specified by constraints of the form
+			$$c_i(x) \geq 0 ,\,\,\,\,\,\, i \in \{1,2,\ldots,m\}$$
+			Note that constraints of the form $c_i(x) \leq 0$ can be reformulated as $-c_i(x) \geq 0$. Similarly, equality constraints can be obtained by enforcing $c_i(x) \geq 0$ and $c_i(x) \leq 0$.
+			\item
+			\textbf{Convex programming}: Objective function $f$ is a convex function and if the set $S$ is a convex set
+			\item
+			\textbf{Linear programming}: Special case of convex programming where the objective $f$ and the constraints $c_i$'s are linear
+		\end{itemize}
+		
+		
+		% \textbf{Mathematical formulation}:
+		% $$\min_{x \in \Rb^n} f(x)$$
+		% subject to
+		% $$c_i(x) \geq 0$$ where $i \in \{1,2,\ldots,m\}$.
+		% \begin{itemize}
+		% 	\item
+		% 	$x$ is the vector of variables/unknowns/paramets
+		% 	\item
+		% 	$f: \Rb^n \to \Rb$ is the objective function
+		% 	\item
+		% 	$c_i(x)$ are the $m$ constraints
+		% \end{itemize}
+		% \textbf{Note}: Maximizing $f(x)$ is equivalent to minimizing $-f(x)$.\\
+		% \textbf{Note}: Any equality such as $c_i(x) = 0$ can be expressed as $c_i(x) \geq 0$ and $-c_i(x) \geq 0$.
+		% \item
+		% Example $1$: $\min \bkt{x_1-2}^2 + \bkt{x_2-1}^2$ subject to $x_1^2-x_2 \leq 0$ and $x_1+x_2 \leq 2$
+		% \item
+		% Example $2$:
+	\end{itemize}
+\end{document}
