@@ -1,0 +1,40 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\usepackage{fullpage}
+\newcommand{\bkt}[1]{\left(#1\right)}
+\newcommand{\Rb}{\mathbb{R}}
+\begin{document}
+	\begin{enumerate}
+		\item
+		Compute the first two iterates of steepest descent and Newton method for the Rosenbrock function:
+		$$f(x) = \bkt{x-1}^2 + 100\bkt{y-x^2}^2$$
+		starting at $(0,-1)$.
+		\item
+		Consider a convex function $f: \Rb \mapsto \Rb$. Recall that $f$ is convex if $f(tx+(1-t)y) \leq tf(x) + (1-t)f(y)$. Also, recall that if $f(x) \in C^2$, then an equivalent condition is that $f''(x) \geq 0$.
+		\begin{itemize}
+			\item
+			Prove that for any $n$
+			$$f\bkt{a_1x_1+a_2x_2+\cdots+a_nx_n} \leq a_1f(x_1)+a_2f(x_2)+\cdots+a_nf(x_n)$$
+			where $a_1+a_2+\cdots+a_n = 1$, where $a_i \geq 0$.
+			\item
+			Prove that $-\log(x)$ is convex
+			\item
+			Hence or otherwise conclude the Arithmetic Mean-Geoemtric Mean inequality, i.e., if $x_i$'s are non-negative real numbers, then
+			$$\dfrac{x_1+x_2+\cdots+x_n}n \geq \sqrt[n]{x_1x_2\cdots x_n}$$
+		\end{itemize}
+		\item
+		Prove that in any triangle $ABC$, we have
+		$$\sin(A) + \sin(B) + \sin(C) \leq \dfrac{3\sqrt3}2$$
+		\textbf{HINT}: Consider an appropriate convex function.
+		\item
+		Find the first two intervals using the bisection method to compute the minimum of the function
+		$$f(x) = x^2 \cos(x)$$
+		on the interval $[\pi/2,3\pi/2]$.
+		\item
+		Find the monic quadratic polynomial, $q(x)$, such that
+		$$\int_{-1}^1 \left\vert q(x) \right\vert dx$$
+		is minimized.
+		\item
+		Show that among all rectangles with a given perimeter, the square is the one with the maximum area.
+	\end{enumerate}
+\end{document}
