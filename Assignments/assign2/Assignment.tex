@@ -1,0 +1,62 @@
+\documentclass{article}
+\usepackage{sivaSAFRANshort}
+\begin{document}
+	In all the problems below, if you think the problem is ill-posed (i.e., needs more information) you may assume relevant pieces of information. Make sure to explicitly state these assumptions. Bonus points will be awarded for solutions that are novel or extend the problem to a more general setting. All questions carry equal weightage.
+	\begin{enumerate}
+		\item
+		\textbf{City planning}:
+		You are incharge of city planning and the problem at hand is to place cellphone towers in a city. The issue is to where to place these towers. The shorter the distance to the nearest tower the better. Further, you may assume that each location is a city is serviced by only one of the cellphone towers (the nearest one). Assume that the city is a rectangular region. Formulate this as an appropriate optimization problem (Take the distance as Euclidean distance). Pose the problem so the number of cellphone towers is an input parameter and implement an algorithm to the problem. You need to turn in the following:
+	\begin{itemize}
+		\item
+		A detailed formulation and an implementation of the algorithm
+		\item
+		Voronoi diagram of your solutions for few values of the input parameter
+		\item
+		The computational time to solve the optimization problem as a function of the input parameter
+		\item
+		The largest problem size you can solve
+		\item
+		A short write up of the above
+	\end{itemize}
+		\item
+		\textbf{Going to Mars}: You are the director of a space agency and your goal is to launch a rover from Earth to Mars. You would like to have minimal direction changes in the trajectory and hence prefer that the rover traversing a straight line from Earth to Mars. The goal is to launch the rover at the right time with the right velocity from earth so that it lands on Mars. You may assume that the elliptical orbits of Earth and Mars around the Sun (with the Sun at the focus) are in the same plane. Formulate this as an optimization problem and implement the algorithm. Pose the problem so that orbits of the earth and Mars, the initial locations of Earth and Mars, velocity at which they go around the Sun are input parameters.
+		\begin{itemize}
+			\item
+			A detailed formulation and an implementation of the algorithm
+			\item
+			Try to extend this if the orbits of Earth and Mars are not in the same plane but one of the foci of both the ellipses matches (i.e., the location of Sun is fixed)
+			\item
+			A short write up of the above and some illustrations for a few input parameters.
+		\end{itemize}
+		\item
+		\textbf{Shortest time}:
+		You are given two points $A$ and $B$ with coordinates $(0,a)$ and $(b,0)$ as shown in Figure~\ref{figure}.
+		\begin{figure}[!htbp]
+			\begin{center}
+			\begin{tikzpicture}
+				\draw [<->] (-1,0) -- (3.5,0);
+				\draw [<->] (0,-1) -- (0,2.5);
+				\draw [fill=red] (0,2) circle (0.05);
+				\draw [fill=red] (3,0) circle (0.05);
+				\node at (-0.25,2) {$A$};
+				\node at (3,0.25) {$B$};
+			\end{tikzpicture}
+			\caption{Shortest time taken between $A$ and $B$}
+			\label{figure}
+			\end{center}
+		\end{figure}
+		You have $n$ straight panels of given length $l_1,l_2,\ldots,l_n$ such that $\dsum_{k}l_k \geq \magn{AB}_2$. Your goal is join $A$ and $B$ using these $n$ panels such that time taken by a ball rolling from $A$ to $B$ along this path made by these panels is the minimum. The direction of gravity acts downwards.
+		\begin{itemize}
+			\item
+			The input parameters are $a$, $b$, $n$ and $\{l_1,l_2,\ldots,l_n\}$.
+			\item
+			A detailed formulation and an implementation of the algorithm
+			\item
+			The computational time to solve the optimization problem as a function of $n$
+			\item
+			The largest problem size you can solve
+			\item
+			A short write up of the above and some illustrations for a few input parameters.
+		\end{itemize}
+	\end{enumerate}
+\end{document}
